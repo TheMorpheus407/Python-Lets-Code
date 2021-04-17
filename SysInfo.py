@@ -28,7 +28,7 @@ for i, perc in enumerate(psutil.cpu_percent(percpu=True, interval=1)):
 
 def adjust_size(size):
     factor = 1024
-    for i in ["B", "KB", "MB", "GB", "TB"]:
+    for i in ["B", "KiB", "MiB", "GiB", "TiB"]:
         if size > factor:
             size = size / factor
         else:
