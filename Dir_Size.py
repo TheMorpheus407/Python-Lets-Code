@@ -8,9 +8,7 @@ def get_dir_size(dir):
                 sum += i.stat().st_size
             elif i.is_dir():
                 sum += get_dir_size(i.path)
-    except PermissionError:
-        return 0
-    except Exception:
+    except OsError:
         return 0
     return sum
 
