@@ -21,5 +21,6 @@ def get_size(byte):
         byte /= 1024
     return f"{byte:.2f}EB"
 
-size = get_dir_size(r"G:\Tuts")
-print(get_size(size))
+folder = r"G:\Tuts"
+size = get_dir_size(folder)
+print(f"{folder} hat {get_size(size)}")
