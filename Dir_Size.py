@@ -1,5 +1,6 @@
 import os
 
+
 def get_dir_size(dir):
     sum = 0
     try:
@@ -8,11 +9,10 @@ def get_dir_size(dir):
                 sum += i.stat().st_size
             elif i.is_dir():
                 sum += get_dir_size(i.path)
-    except PermissionError:
-        return 0
     except Exception:
         return 0
     return sum
+
 
 def get_size(byte):
     for i in ["", "K", "M", "G", "T", "P"]:
@@ -20,6 +20,7 @@ def get_size(byte):
             return f"{byte:.2f}{i}B"
         byte /= 1024
     return f"{byte:.2f}EB"
+
 
 folder = r"G:\Tuts"
 size = get_dir_size(folder)

@@ -11,8 +11,9 @@ https://twitter.com/TheMorpheusTuts/status/1416103913355366400 Hallo Welt
 Zu erkennen         am schlechten Deutsch, aber sowas sollte generell nicht per SMS kommen, ohne, dass ihr wisst von wem.
 """
 
-def clean(text, allow_none=False, duplicate_whitespace=False, remove_linebreaks_with='\n', to_ascii=True, allow_mentions=True, allow_urls=True, allow_digits=True, allow_punctuation=True):
-    if text == None:
+
+def clean(text, *, allow_none=False, duplicate_whitespace=False, remove_linebreaks_with='\n', to_ascii=True, allow_mentions=True, allow_urls=True, allow_digits=True, allow_punctuation=True):
+    if text is None:
         if allow_none:
             return None
         return ''
@@ -35,7 +36,7 @@ def clean(text, allow_none=False, duplicate_whitespace=False, remove_linebreaks_
         text = re.sub(' +', ' ', text).strip()
 
     if to_ascii:
-        text= text.encode('ascii', 'ignore').decode()
+        text = text.encode('ascii', 'ignore').decode()
 
     return text
 
