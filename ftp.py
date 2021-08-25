@@ -19,7 +19,7 @@ def save_file_binary(data):
 ftp = ftplib.FTP(FTP_HOST, FTP_USER, FTP_PASS)
 ftp.encoding = "utf-8"
 print(ftp.getwelcome())
-home = "/admin/firmware"
+home = "/"
 
 ftp.dir()
 ftp.cwd(home)
