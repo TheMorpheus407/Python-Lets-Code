@@ -1,6 +1,8 @@
 import cv2
+
 capture = cv2.VideoCapture(0)
 cascade = cv2.CascadeClassifier("files/haarcascade_frontalface_default.xml")
+# https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade_frontalface_default.xml
 while True:
     _, im = capture.read()
     im_gray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
@@ -10,5 +12,6 @@ while True:
     cv2.imshow("Kamera", im)
     if cv2.waitKey(1) == ord("q"):
         break
+
 capture.release()
 cv2.destroyAllWindows()
